@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>一款震撼的图片展示的效果-jQuery插件库  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="JS实现的一款震撼的图片显示效果" />
+    <meta name="keywords" content="图片，图片展示，js，jquery,jquery插件,布局,图片展示,图像, UI,媒体,一款震撼的图片展示的效果" />
+    <link href="css/demo.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" href="css/pace-theme-barber-shop.css" />
+    <!--[if IE]>
+    <style type="text/css">
+      li.purchase a {
+          padding-top: 5px;
+          background-position: 0px -4px;
+      }
+      
+      li.remove_frame a {
+          padding-top: 5px;
+          background-position: 0px -3px;
+      }  
+    </style>
+    <![endif]-->
+    <script type="text/javascript">
+      var txt = 'http://demo.jq22.com/jpg-141117093253'
+      window.g1=txt.substr(0,3)
+      window.g2=txt.substr(0,20)
+    </script>
+    <script src="http://libs.baidu.com/jquery/1.7.0/jquery.min.js"></script>
+    <script src="pace/pace.min.js"></script>
+    <script type="text/javascript">
+      var theme_list_open = false;
+      
+      $(document).ready(function () { 
+        function fixHeight() {
+      
+            var headerHeight = $("#switcher").height();
+      
+            $("#iframe").attr("height", $(window).height() - 54 + "px");
+      
+        }
+      
+        $(window).resize(function () {
+      
+            fixHeight();
+      
+        }).resize();
+      
+      
+        $('.icon-monitor').addClass('active');
+      
+        $(".icon-mobile-3").click(function () {
+            $("#by").css("overflow-y", "auto");
+            $('#iframe-wrap').removeClass().addClass('mobile-width-3');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+      
+        $(".icon-mobile-2").click(function () {
+            $("#by").css("overflow-y", "auto");
+            $('#iframe-wrap').removeClass().addClass('mobile-width-2');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+      
+        $(".icon-mobile-1").click(function () {
+            $("#by").css("overflow-y", "auto");
+            $('#iframe-wrap').removeClass().addClass('mobile-width');
+            $('.icon-tablet,.icon-mobile,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+      
+        $(".icon-tablet").click(function () {
+            $("#by").css("overflow-y", "auto");
+            $('#iframe-wrap').removeClass().addClass('tablet-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+      
+        $(".icon-monitor").click(function () {
+            $("#by").css("overflow-y", "hidden");
+            $('#iframe-wrap').removeClass().addClass('full-width');
+            $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+            $(this).addClass('active');
+            return false;
+        });
+      });  
+      
+      function Responsive($a) {
+          if ($a == true) $("#Device").css("opacity", "100");
+          if ($a == false) $("#Device").css("opacity", "0");
+          $('#iframe-wrap').removeClass().addClass('full-width');
+          $('.icon-tablet,.icon-mobile-1,.icon-monitor,.icon-mobile-2,.icon-mobile-3').removeClass('active');
+          $(this).addClass('active');
+          return false;
+      }; 
+    </script>
+  </head>
+  <body id="by" style="overflow-y: hidden">
+    <div id="switcher">
+      <div class="center">
+        <ul>
+          <div id="Device">
+            <li class="device-monitor">
+              <a href="javascript:">
+                <div class="icon-monitor"></div>
+              </a>
+            </li>
+            <li class="device-mobile">
+              <a href="javascript:">
+                <div class="icon-tablet"></div>
+              </a>
+            </li>
+            <li class="device-mobile">
+              <a href="javascript:">
+                <div class="icon-mobile-1"></div>
+              </a>
+            </li>
+            <li class="device-mobile-2">
+              <a href="javascript:">
+                <div class="icon-mobile-2"></div>
+              </a>
+            </li>
+            <li class="device-mobile-3">
+              <a href="javascript:">
+                <div class="icon-mobile-3"></div>
+              </a>
+            </li>
+            <li class="logoTop">
+              <a href="jquery-info906">一款震撼的图片展示的效果</a>
+            </li>
+            <li class="remove_frame">
+              <a href="http://demo.jq22.com/jpg-141117093253" title="移除框架"></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div id="iframe-wrap">
+      <iframe id="iframe" src="http://demo.jq22.com/jpg-141117093253" frameborder="0" width="100%"></iframe>
+    </div>
+    <!--<script type="text/javascript">
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb3a3fc356d0af38b811a0ef8d50716b8' type='text/javascript'%3E%3C/script%3E"));
+    </script>-->
+  </body>
+</html>
